@@ -17,6 +17,7 @@ public class BerekenRoute {
     private static int plekInWagen = 100;
     private static ArrayList<Integer> bezet = new ArrayList<Integer>();
     private static ArrayList<ArrayList<ArrayList<Double>>> Routes = new ArrayList<>();
+    private static ArrayList<Route> RouteOverzicht = new ArrayList<>();
 
     public static double CalculateDistance(double[] PointA, double[] PointB){
         //Wortel van ( PointA[0] - PointB[0] )^2 + ( PointA[1] - PointB[1] )^2
@@ -90,13 +91,26 @@ public class BerekenRoute {
                 }
             }
         }
+
+        // Zet om naar Route en Tussenstop objecten
+        int RouteID = 1;
+        for (ArrayList<ArrayList<Double>> Route: Routes) {
+            ArrayList<Tussenstop> lijstTussenstops = new ArrayList<>();
+            int TussenstopID = 1;
+            for(ArrayList<Double> Tussenstops: Route){
+               Tussenstop tussenstop =  new Tussenstop(Tussenstops.get(0), Tussenstops.get(1), RouteID, TussenstopID);
+                TussenstopID++;
+                lijstTussenstops.add(tussenstop);
+            }
+            Route RouteObject = new Route(lijstTussenstops, RouteID);
+            RouteOverzicht.add(RouteObject);
+            RouteID++;
+        }
     }
 
     public static void main(String[] args) {
         CreateRoute();
-        System.out.println("Berkende routes: "+ Routes.toString());
-        System.out.println("Tussenstops: "+ bezet.size());
-        System.out.println("Aantal Cordinaten: "+ Cords.length);
+
     }
 }
 
