@@ -17,7 +17,6 @@ public class Tussenstop {
                 "xCord=" + xCord +
                 ", yCord=" + yCord +
                 ", TussenStopID=" + TussenStopID +
-                ", RouteID=" + RouteID +
                 '}';
     }
 }

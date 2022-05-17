@@ -105,6 +105,7 @@ public class BerekenRoute {
             Route RouteObject = new Route(lijstTussenstops, RouteID);
             RouteOverzicht.add(RouteObject);
             RouteID++;
+            System.out.println(RouteObject.toString());
         }
     }
 
