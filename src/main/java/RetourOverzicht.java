@@ -4,14 +4,18 @@ import java.awt.event.ActionEvent;
 
 public class RetourOverzicht extends JPanel{
     public RetourOverzicht() {
+        JFrame retouroverzicht = new JFrame();
+        retouroverzicht.setLayout(new FlowLayout());
 
         int aantalRetours = 3;
-        JFrame retouroverzicht = new JFrame();
         JPanel[] retouraanvraag = new JPanel[aantalRetours];
         JPanel[] infoRetour = new JPanel[aantalRetours];
         JPanel[] knoppenRetour = new JPanel[aantalRetours];
-
         for (int i = 0; i < aantalRetours; i++) {
+//            retouraanvraag[i] = new JPanel();
+//            infoRetour[i] = new JPanel();
+//            knoppenRetour[i] =  new JPanel();
+
             JLabel customerID = new JLabel("CustomerID: ");
             JLabel productnummer = new JLabel("Productnummer: ");
             JLabel restDagen = new JLabel("Resterende dagen: ");
@@ -37,12 +41,14 @@ public class RetourOverzicht extends JPanel{
             retouraanvraag[i].setLayout(new FlowLayout());
             infoRetour[i].setLayout(new BoxLayout(infoRetour[i], BoxLayout.PAGE_AXIS));
             knoppenRetour[i].setLayout(new FlowLayout());
-
+            System.out.println(retouraanvraag);
             retouraanvraag[i].add(infoRetour[i]);
             retouraanvraag[i].add(knoppenRetour[i]);
             retouroverzicht.add(retouraanvraag[i]);
+            System.out.println(i);
         }
 
+        repaint();
         retouroverzicht.setSize(700,700);
         retouroverzicht.setVisible(true);
     }
