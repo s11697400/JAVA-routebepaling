@@ -1,21 +1,22 @@
-package com.company;
 import java.sql.*;
 
 public class DatabaseConnectie {
-    public static void dbConnect(){
+    public static void dbConnect() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/nerdygadgets", "root", "");
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("Select * from cities");
 
-            while(rs.next()) {
+            while (rs.next()) {
                 String stad = rs.getString("CityName");
                 System.out.println(stad);
             }
 
 
             con.close();
-        }catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println("error");
         }
+    }
+}
