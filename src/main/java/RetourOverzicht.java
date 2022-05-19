@@ -40,7 +40,7 @@ public class RetourOverzicht extends JPanel{
                     int keuze = 0;
                     if (verwijderenActionPerformed.getSource() == verwijderen) {
                         keuze = JOptionPane.showConfirmDialog(
-                                verwijderen, "Weet u het zeker?", "Vraag",
+                                verwijderen, "Weet u het zeker?", "Request",
                                 JOptionPane.YES_NO_OPTION);
                     }
                     if (keuze == JOptionPane.YES_OPTION) {
