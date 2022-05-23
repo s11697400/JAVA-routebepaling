@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5aec045-bf5a-4f6a-97bd-5a5ff57831fe" name="Changes" comment="Berekening van routes uitgevoerd">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JAVA-routebepaling.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BerekenRoute.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Route.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tussenstop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +251,7 @@
       <workItem from="1652793706752" duration="336000" />
       <workItem from="1652794106044" duration="1322000" />
       <workItem from="1652795572553" duration="949000" />
-      <workItem from="1652796582418" duration="1998000" />
+      <workItem from="1652796582418" duration="10320000" />
     </task>
     <task id="LOCAL-00001" summary="Berekening van routes uitgevoerd">
       <created>1652278842538</created>
