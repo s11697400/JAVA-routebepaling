@@ -3,4 +3,9 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="17" />
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="JAVA-routebepaling.main" options="--add-exports java.base/sun.util.calendar=ALL-UNNAMED" />
+    </option>
+  </component>
 </project>

@@ -6,9 +6,11 @@ public class Route {
     private double afstand;
     private double berekentijd;
 
-    public Route(ArrayList<Tussenstop> Tussenstops, int RouteID){
+    public Route(ArrayList<Tussenstop> Tussenstops, int RouteID, double afstand, double berekentijd){
         this.Tussenstops = Tussenstops;
         this.RouteID = RouteID;
+        this.afstand = afstand;
+        this.berekentijd = berekentijd;
     }
 
     @Override
@@ -16,6 +18,8 @@ public class Route {
         return "Route{" +
                 "RouteID=" + RouteID +
                 ", Tussenstops=" + Tussenstops +
+                ", Afstand = " + afstand +
+                ", Tijd = " + berekentijd +
                 " }";
     }
 }
