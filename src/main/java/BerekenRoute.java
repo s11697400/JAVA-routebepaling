@@ -28,6 +28,7 @@ public class BerekenRoute {
         DatabaseConnectie db = new DatabaseConnectie();
         db.insertTussenstop(routeID,tussenstopID,lat,longt);
     }
+
     public static double CalculateDistance(double[] PointA, double[] PointB){
         //Wortel van ( PointA[0] - PointB[0] )^2 + ( PointA[1] - PointB[1] )^2
         double distance;
@@ -118,24 +119,29 @@ public class BerekenRoute {
 
             }
         }
-
-                // Zet om naar Route en Tussenstop objecten
                 int RouteID = 1;
-
+                // Zet om naar Route en Tussenstop objecten
+                if(DatabaseConnectie.getRetoursAmount() > 0){
+                     RouteID = DatabaseConnectie.getRetoursAmount() + 1;
+                }
                 for (ArrayList<ArrayList<Double>> Route : Routes) {
                     double afstand = 0.0;
                     double tijd = 0.0;
                     ArrayList<Tussenstop> lijstTussenstops = new ArrayList<>();
                     int TussenstopID = 1;
                     for (ArrayList<Double> Tussenstops : Route) {
-                    insertTussenStopInDB(RouteID, TussenstopID, Tussenstops.get(0), Tussenstops.get(1));
                         Tussenstop tussenstop = new Tussenstop(Tussenstops.get(0), Tussenstops.get(1), RouteID, TussenstopID);
                         TussenstopID++;
                         lijstTussenstops.add(tussenstop);
                         afstand += Tussenstops.get(2);
                         tijd += Tussenstops.get(3);
                     }
+                    TussenstopID = 1;
                     insertRouteInDB(RouteID, tijd, afstand, 0);
+                    for (ArrayList<Double> Tussenstops: Route){
+                        insertTussenStopInDB(RouteID, TussenstopID, Tussenstops.get(0), Tussenstops.get(1));
+                        TussenstopID++;
+                    }
                     Route RouteObject = new Route(lijstTussenstops, RouteID, afstand, tijd);
                     RouteOverzicht.add(RouteObject);
                     RouteID++;

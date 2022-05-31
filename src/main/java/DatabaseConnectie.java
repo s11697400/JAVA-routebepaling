@@ -108,6 +108,29 @@ public class DatabaseConnectie {
             }
             return new double[1][0];
     }
+    public static int getRetoursAmount(){
+        Connection con = dbConnect();
+        Statement stmt = null;
+        int aantal = 0;
+        try {
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM routes");
 
+            while (rs.next()){
+             aantal =  rs.getInt(1);
+            }
+
+            con.close();
+
+            return aantal;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return aantal;
+    }
 
 }
