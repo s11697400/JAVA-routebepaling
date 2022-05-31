@@ -22,4 +22,16 @@ public class Route {
                 ", Tijd = " + berekentijd +
                 " }";
     }
+
+    public int getRouteID() {
+        return RouteID;
+    }
+
+    public double getAfstand() {
+        return afstand;
+    }
+
+    public double getBerekentijd() {
+        return berekentijd;
+    }
 }

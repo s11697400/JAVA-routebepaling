@@ -34,6 +34,9 @@ import java.util.Scanner;
 
 //Gemaakt door Michiel van Dooren s1166988 en Thijs Soepenberg s1169740
 public class RouteGUI extends JFrame {
+    DatabaseConnectie db = new DatabaseConnectie();
+    int RouteID = db.getRouteID();
+    double AantalKm = db.getAantalKm();
 
     public RouteGUI() {
         initComponents();
@@ -55,9 +58,10 @@ public class RouteGUI extends JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Route");
+        jLabel1.setText("Route: " + RouteID);
 
-        jLabel2.setText("Aantal Km");
+        jLabel2.setText("Aantal Km: " + (double) Math.round(Math.round(AantalKm*100.0)/100.0) * 111.0);
+
 
         jButton1.setText("Klaar met route");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

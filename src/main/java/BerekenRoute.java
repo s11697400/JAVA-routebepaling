@@ -148,12 +148,16 @@ public class BerekenRoute {
                 }
             }
 
-
-
     public static void main(String[] args) {
         getCords();
         CreateRoute();
         System.out.println(RouteOverzicht.toString());
+    }
+    public static ArrayList<ArrayList<ArrayList<Double>>> getRoutes() {
+        return Routes;
+    }
+    public static ArrayList<Route> getRouteOverzicht(){
+        return RouteOverzicht;
     }
 }
 
