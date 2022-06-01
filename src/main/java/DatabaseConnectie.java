@@ -19,7 +19,7 @@ public class DatabaseConnectie {
 
         Connection con = null;
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost/nerdygadgets", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/nerdygadgets", "root", "root");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -180,6 +180,30 @@ public class DatabaseConnectie {
         }
         return km;
     }
+
+    public static ArrayList<Integer> getIfArchief() {
+        Connection con = dbConnect();
+
+        ArrayList<Integer> ifArchief = new ArrayList<>();
+
+        try {
+            String query = "SELECT isArchief FROM retour";
+
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                ifArchief.add(rs.getInt("isArchief"));
+            }
+
+            con.close();
+            return ifArchief;
+        } catch (Exception e) {
+            System.err.println("exception");
+            System.err.println(e.getMessage());
+        }
+        return ifArchief;
+    }
+
     public static ArrayList<Integer> getRetourID() {
         Connection con = dbConnect();
 
